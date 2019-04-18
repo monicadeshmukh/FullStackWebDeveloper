@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Styling using Animation </title>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+<script>
+	$(window).ready( 	//when the main window or this page is ready or loaded, then this function will execute.
+		function() {
+			alert("Jquery is Loaded");
+		}
+	);
+</script>
+</head>
+<body>
+	<div id = 'myDiv' style = "border: 1px solid red; width = 200; height = 200;"> inside div element </div>
+	
+	<script>
+		$("div#myDiv").click(
+			function(){
+				alert("inside click function");
+				$(this).animate(
+					{
+						width: "100",
+						height: "100",
+						borderWidth: "10",
+					},
+					3000,	//duration in milliseconds (i.e. 3 sec) for the animated effect to happen.
+					function() {
+						alert("finished animated callback");
+					}
+				);
+			}
+		);
+	</script>
+</body>
+</html>
